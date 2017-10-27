@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Neighborhood map</title>
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPEZfOwR-tOvkoc-Xo0TGzyb0YfdKzRNw&callback=initMap" async defer></script>
+</head>
+
+<body>
+    <!--Start Bootstrap   -->
+    <div id="wrapper">
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <!-- Sidebar -->
+                <h3>FIND Location</h3>
+                <input class="sidebar-brand search" data-bind="textInput: searchterm, valueUpdate: 'afterkeydown' " type="search" name="searchBox">
+                <ul calss="sidebar-nav" data-bind="foreach: filterList"><a href="#">
+                    <li class="sidebar-brand listoflocation" data-bind="text: title, visible: visible"></li></a>
+
+                </ul>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="map-responsive container-fluid">
+                <div class=" container ">
+                   
+                    <div id="map"></div>
+
+                </div>
+                <a  style="position:fixed" href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Click to choose location</a>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+
+    <script type="text/javascript" src="js/script.js"></script>
+    
+</body>
+
+</html>
